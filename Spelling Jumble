@@ -1,0 +1,1374 @@
+/*
+FORM 1 – Name with start button
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace spellingJumble
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }	
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.Location = new Point(0, 0);
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.BackColor = Color.SkyBlue;
+            BackgroundImage = new Bitmap("D:/shops/jumble1.jpg");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            Image picture;
+            ImageLayout layout;
+            picture = BackgroundImage;
+            layout = BackgroundImageLayout;
+            this.BackgroundImage = picture;
+            this.BackgroundImageLayout = layout;
+            Label l1 = new Label();
+            l1.AutoSize = true;
+            l1.Text = "SPELLING JUMBLE";
+            l1.BackColor = Color.Green;
+            l1.ForeColor = Color.Yellow;
+            l1.Font = new Font("Showcard Gothic", 50, FontStyle.Bold);
+            this.Controls.Add(l1);
+            l1.Location = new Point(420, 250);
+            Button b1 = new Button();
+            b1.Text = "Start";
+            b1.Location = new Point(580, 500);
+            b1.Font = new Font("Goudy Stout",28,FontStyle.Bold);
+            b1.Size = new Size(300, 100);
+            b1.ForeColor = Color.White;
+            b1.BackColor = Color.Purple;
+            this.Controls.Add(b1);
+            b1.Click += new EventHandler(button1_click);
+        }
+        void button1_click(object sender,EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
+        }
+    }
+}
+
+FORM 2 – Menu
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace spellingJumble
+{
+    public partial class Form2 : Form
+    {
+        public Form2()
+        {
+            InitializeComponent();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            this.Location = new Point(0, 0);
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.BackColor = Color.SkyBlue;
+            BackgroundImage = new Bitmap("D:/shops/second.jpg");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            Image picture;
+            ImageLayout layout;
+            picture = BackgroundImage;
+            layout = BackgroundImageLayout;
+            Button b1 = new Button();
+            b1.Text = "EaSy";
+            b1.AutoSize = true;
+            b1.ForeColor = Color.Chocolate;
+            b1.BackColor = Color.White;
+            b1.Enabled = true;
+            b1.Visible = true;
+            b1.Location = new Point(500, 200);
+            b1.Font = new Font("Broadway", 40, FontStyle.Bold);
+            this.Controls.Add(b1);
+            b1.Click += new EventHandler(button1_click);
+
+            Button b2 = new Button();
+            b2.Text = "MeDiUm";
+            b2.AutoSize = true;
+            b2.ForeColor = Color.Chocolate;
+            b2.BackColor = Color.White;
+            b2.Enabled = true;
+            b2.Visible = true;
+            b2.Location = new Point(590, 300);
+            b2.Font = new Font("Broadway", 40, FontStyle.Bold);
+            this.Controls.Add(b2);
+            b2.Click += new EventHandler(button2_click);
+
+            Button b3 = new Button();
+            b3.Text = "HaRd";
+            b3.AutoSize = true;
+            b3.ForeColor = Color.Chocolate;
+            b3.BackColor = Color.White;
+            b3.Enabled = true;
+            b3.Visible = true;
+            b3.Location = new Point(740, 400);
+            b3.Font = new Font("Broadway", 40, FontStyle.Bold);
+            this.Controls.Add(b3);
+            b3.Click += new EventHandler(button3_click);
+        }
+        void button1_click(object sender,EventArgs e)
+        {
+            Form3 f3 = new Form3();
+            f3.Show();
+        }
+        void button2_click(object sender, EventArgs e)
+        {
+            Form4 f4 = new Form4();
+            f4.Show();
+        }
+        void button3_click(object sender, EventArgs e)
+        {
+            Form5 f5 = new Form5();
+            f5.Show();
+        }
+    }
+}
+FORM 3, 4, 5  –  Game Levels - Easy, Medium, Hard
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+	
+namespace spellingJumble
+{
+    public partial class Form5 : Form
+    {
+        public Form5()
+        {
+            InitializeComponent();
+        }
+        int score = 0;
+        int wrong = 1;
+        Button bc3 = new Button();
+        Label l1 = new Label();
+        Label l2 = new Label();
+        Label l3 = new Label();
+        Label l4 = new Label();
+        Label l5 = new Label();
+        Button b2 = new Button();
+        Button b1 = new Button();
+        PictureBox p1 = new PictureBox();
+        Button bu1 = new Button();
+        Button bu2 = new Button();
+        Button bu3 = new Button();
+        Button bu4 = new Button();
+        Button bu5 = new Button();
+        Button bu6 = new Button();
+        Button bu7 = new Button();
+        Button bu8 = new Button();
+        Button bu9 = new Button();
+        Button bu10 = new Button();
+        Button bu11 = new Button();
+        Button bu12 = new Button();
+        Button bu13 = new Button();
+        Button bu14 = new Button();
+        Button bc2 = new Button();
+        Button bu = new Button();
+        Button bu15 = new Button();
+        Button bu16 = new Button();
+        Button bu17 = new Button();
+        Button bu18 = new Button();
+        Button bu19 = new Button();
+        Button bu20 = new Button();
+        Button bu21 = new Button();
+        Button bu22 = new Button();
+        Button bu23 = new Button();
+        Button bu24 = new Button();
+        Button bu25 = new Button();
+        Button bu26 = new Button();
+        Button bu27 = new Button();
+        Button bu28 = new Button();
+        Button bu29 = new Button();
+        Button bu30 = new Button();
+        Button bu31 = new Button();
+        Button bu32 = new Button();
+        Button bu33 = new Button();
+        Button bu34 = new Button();
+        Button bu35 = new Button();
+        Button bu36 = new Button();
+        Button bu37 = new Button();
+        Button bc4 = new Button();
+        Button bc5 = new Button();
+        TextBox t1 = new TextBox();
+        private void Form5_Load(object sender, EventArgs e)
+        {
+            this.Location = new Point(0, 0);
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.BackColor = Color.SkyBlue;
+            BackgroundImage = new Bitmap("D:/shops/image0.jpg");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            Image picture;
+            ImageLayout layout;
+            picture = BackgroundImage;
+            layout = BackgroundImageLayout;
+
+            l1.Text = "Correct =";
+            l1.Visible = true;
+            l1.AutoSize = true;
+            l1.Font = new Font("Arial", 20, FontStyle.Bold);
+            l1.BackColor = Color.Green;
+            l1.ForeColor = Color.White;
+            this.Controls.Add(l1);
+
+            l2.Text = "0";
+            l2.Visible = true;
+            l2.AutoSize = true;
+            l2.Location = new Point(132, 0);
+            l2.Font = new Font("Arial", 20, FontStyle.Bold);
+            l2.BackColor = Color.Green;
+            l2.ForeColor = Color.White;
+            this.Controls.Add(l2);
+
+            Label l3 = new Label();
+            l3.Text = "Wrong =";
+            l3.Visible = true;
+            l3.AutoSize = true;
+            l3.Location = new Point(1220, 0);
+            l3.Font = new Font("Arial", 20, FontStyle.Bold);
+            l3.BackColor = Color.Green;
+            l3.ForeColor = Color.White;
+            this.Controls.Add(l3);
+
+            l4.Text = "0";
+            l4.Visible = true;
+            l4.AutoSize = true;
+            l4.Location = new Point(1343, 0);
+            l4.Font = new Font("Arial", 20, FontStyle.Bold);
+            l4.BackColor = Color.Green;
+            l4.ForeColor = Color.White;
+            this.Controls.Add(l4);
+
+            b1.Text = "Restart";
+            b1.AutoSize = true;
+            b1.ForeColor = Color.White;
+            b1.BackColor = Color.Green;
+            b1.Enabled = true;
+            b1.Visible = true;
+            b1.Location = new Point(180, 0);
+            b1.Font = new Font("Arial", 17, FontStyle.Bold);
+            this.Controls.Add(b1);
+            b1.Click += new EventHandler(restart_click);
+
+            l5.Text = "Make Correct Spelling Of The Given Image...!!!!";
+            l5.Visible = true;
+            l5.Size = new Size(400, 200);
+            l5.Location = new Point(550, 250);
+            l5.Font = new Font("Goudy Stout", 20, FontStyle.Bold);
+            l5.TextAlign = ContentAlignment.MiddleCenter;
+            l5.BackColor = Color.Red;
+            l5.ForeColor = Color.White;
+            this.Controls.Add(l5);
+
+            b2.Text = "Continue!!!";
+            b2.ForeColor = Color.White;
+            b2.BackColor = Color.Red;
+            b2.Enabled = true;
+            b2.Visible = true;
+            b2.Size = new Size(400, 100);
+            b2.Location = new Point(550, 450);
+            b2.Font = new Font("Arial", 17, FontStyle.Bold);
+            this.Controls.Add(b2);
+            b2.Click += new EventHandler(button);
+        }
+        void button(object sender, EventArgs e)
+        {
+            l5.Visible = false;
+            b2.Visible = false;
+
+            this.Controls.Add(p1);
+            p1.Enabled = true;
+            p1.Visible = true;
+            p1.Left = 800;
+            p1.Top = 200;
+            p1.BackColor = Color.BlanchedAlmond;
+            p1.Size = new Size(300, 300);
+            p1.SizeMode = PictureBoxSizeMode.StretchImage;
+            Image img1 = Image.FromFile("D:/shops/banana.jpg");
+            p1.Image = img1;
+            if (p1.Image == img1)
+            {
+                bu1.Text = "A";
+                bu1.ForeColor = Color.Pink;
+                bu1.BackColor = Color.Green;
+                bu1.Enabled = true;
+                bu1.Visible = true;
+                bu1.Size = new Size(50, 50);
+                bu1.Location = new Point(200, 400);
+                bu1.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu1);
+                bu1.Click += new EventHandler(buttonA_click);
+
+                bu2.Text = "B";
+                bu2.ForeColor = Color.Pink;
+                bu2.BackColor = Color.Green;
+                bu2.Enabled = true;
+                bu2.Visible = true;
+                bu2.Size = new Size(50, 50);
+                bu2.Location = new Point(250, 400);
+                bu2.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu2);
+                bu2.Click += new EventHandler(buttonB_click);
+                
+                bu3.Text = "N";
+                bu3.ForeColor = Color.Pink;
+                bu3.BackColor = Color.Green;
+                bu3.Enabled = true;
+                bu3.Visible = true;
+                bu3.Size = new Size(50, 50);
+                bu3.Location = new Point(300, 400);
+                bu3.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu3);
+                bu3.Click += new EventHandler(buttonN_click);
+                
+                bu4.Text = "N";
+                bu4.ForeColor = Color.Pink;
+                bu4.BackColor = Color.Green;
+                bu4.Enabled = true;
+                bu4.Visible = true;
+                bu4.Size = new Size(50, 50);
+                bu4.Location = new Point(350, 400);
+                bu4.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu4);
+                bu4.Click += new EventHandler(buttonN1_click);
+
+                bu5.Text = "A";
+                bu5.ForeColor = Color.Pink;
+                bu5.BackColor = Color.Green;
+                bu5.Enabled = true;
+                bu5.Visible = true;
+                bu5.Size = new Size(50, 50);
+                bu5.Location = new Point(400, 400);
+                bu5.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu5);
+                bu5.Click += new EventHandler(buttonA2_click);
+                
+                bu6.Text = "A";
+                bu6.ForeColor = Color.Pink;
+                bu6.BackColor = Color.Green;
+                bu6.Enabled = true;
+                bu6.Visible = true;
+                bu6.Size = new Size(50, 50);
+                bu6.Location = new Point(450, 400);
+                bu6.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu6);
+                bu6.Click += new EventHandler(buttonA3_click);
+
+                bu.Text = "CHecK";
+                bu.ForeColor = Color.Red;
+                bu.BackColor = Color.White;
+                bu.Enabled = true;
+                bu.Visible = true;
+                bu.AutoSize = true;
+                bu.Location = new Point(250, 500);
+                bu.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu);
+                bu.Click += new EventHandler(check_click);
+            }
+            t1.Enabled = true;
+            t1.Text = " ";
+            t1.Visible = true;
+            t1.Multiline = true;
+            t1.Size = new Size(500, 100);
+            t1.Location = new Point(150, 250);
+            t1.BackColor = Color.LightPink;
+            t1.ForeColor = Color.DarkGreen;
+            l5.TextAlign = ContentAlignment.MiddleCenter;
+            t1.Font = new Font("TIMES NEW ROMAN", 30, FontStyle.Bold);
+            this.Controls.Add(t1);
+        }
+        void buttonA_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "A";
+            }
+            else
+            {
+                t1.Text += "A";
+            }
+
+        }
+        void buttonB_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "B";
+            }
+            else
+            {
+                t1.Text += "B";
+            }
+        }
+        void buttonN_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "N";
+            }
+            else
+            {
+                t1.Text += "N";
+            }
+        }
+        void buttonN1_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "N";
+            }
+            else
+            {
+                t1.Text += "N";
+            }
+        }
+        void buttonA2_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "A";
+            }
+            else
+            {
+                t1.Text += "A";
+            }
+        }
+        void buttonA3_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "A";
+            }
+            else
+            {
+                t1.Text += "A";
+            }
+        }
+        void restart_click(object sender, EventArgs e)
+        {
+            Form3 NewForm = new Form3();
+            NewForm.Show();
+            this.Dispose(false);
+        }
+        void check_click(object sender, EventArgs e)
+        {
+            if (t1.Text == "BANANA")
+            {
+                score += 1;
+                l2.Text = score.ToString();
+                MessageBox.Show("Congratulations!!! You hav guessed it right....", "Spelling Jumble", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {   wrong += 1;
+                l4.Text = wrong.ToString();
+                MessageBox.Show("Oops..Wrong.. ", "Spelling Jumble", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            t1.Text = "";
+            bu1.Visible = false;
+            bu2.Visible = false;
+            bu3.Visible = false;
+            bu4.Visible = false;
+            bu5.Visible = false;
+            bu6.Visible = false;
+            bu.Visible = false;
+            bu.Enabled = false;
+
+            Image img2 = Image.FromFile("D:/shops/curtains.jpg");
+            p1.Image = img2;
+            if (p1.Image == img2)
+            {
+                bu7.Text = "T";
+                bu7.ForeColor = Color.Pink;
+                bu7.BackColor = Color.Green;
+                bu7.Enabled = true;
+                bu7.Visible = true;
+                bu7.Size = new Size(50, 50);
+                bu7.Location = new Point(150, 400);
+                bu7.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu7);
+                bu7.Click += new EventHandler(button2T_click);
+
+                bu8.Text = "C";
+                bu8.ForeColor = Color.Pink;
+                bu8.BackColor = Color.Green;
+                bu8.Enabled = true;
+                bu8.Visible = true;
+                bu8.Size = new Size(50, 50);
+                bu8.Location = new Point(200, 400);
+                bu8.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu8);
+                bu8.Click += new EventHandler(button2C_click);
+
+                bu9.Text = "I";
+                bu9.ForeColor = Color.Pink;
+                bu9.BackColor = Color.Green;
+                bu9.Enabled = true;
+                bu9.Visible = true;
+                bu9.Size = new Size(50, 50);
+                bu9.Location = new Point(250, 400);
+                bu9.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu9);
+                bu9.Click += new EventHandler(button2I_click);
+
+                bu10.Text = "N";
+                bu10.ForeColor = Color.Red;
+                bu10.BackColor = Color.White;
+                bu10.Enabled = true;
+                bu10.Visible = true;
+                bu10.Size = new Size(50, 50);
+                bu10.Location = new Point(300, 400);
+                bu10.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu10);
+                bu10.Click += new EventHandler(button2N_click);
+
+                bu11.Text = "U";
+                bu11.ForeColor = Color.Red;
+                bu11.BackColor = Color.White;
+                bu11.Enabled = true;
+                bu11.Visible = true;
+                bu11.Size = new Size(50, 50);
+                bu11.Location = new Point(350, 400);
+                bu11.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu11);
+                bu11.Click += new EventHandler(button2U_click);
+
+                bu12.Text = "S";
+                bu12.ForeColor = Color.Pink;
+                bu12.BackColor = Color.Green;
+                bu12.Enabled = true;
+                bu12.Visible = true;
+                bu12.Size = new Size(50, 50);
+                bu12.Location = new Point(400, 400);
+                bu12.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu12);
+                bu12.Click += new EventHandler(button2S_click);
+
+                bu13.Text = "A";
+                bu13.ForeColor = Color.Pink;
+                bu13.BackColor = Color.Green;
+                bu13.Enabled = true;
+                bu13.Visible = true;
+                bu13.Size = new Size(50, 50);
+                bu13.Location = new Point(450, 400);
+                bu13.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu13);
+                bu13.Click += new EventHandler(button2A_click);
+
+                bu14.Text = "R";
+                bu14.ForeColor = Color.Pink;
+                bu14.BackColor = Color.Green;
+                bu14.Enabled = true;
+                bu14.Visible = true;
+                bu14.Size = new Size(50, 50);
+                bu14.Location = new Point(500, 400);
+                bu14.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu14);
+                bu14.Click += new EventHandler(button2R_click);
+
+                bc2.Text = "CHecK";
+                bc2.ForeColor = Color.Red;
+                bc2.BackColor = Color.White;
+                bc2.Enabled = true;
+                bc2.Visible = true;
+                bc2.AutoSize = true;
+                bc2.Location = new Point(250, 500);
+                bc2.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bc2);
+                bc2.Click += new EventHandler(check2_click);
+            }
+        }
+        void button2T_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "T";
+            }
+            else
+            {
+                t1.Text += "T";
+            }
+        }
+        void button2C_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "C";
+            }
+            else
+            {
+                t1.Text += "C";
+            }
+        }
+        void button2I_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "I";
+            }
+            else
+            {
+                t1.Text += "I";
+            }
+        }
+        void button2N_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "N";
+            }
+            else
+            {
+                t1.Text += "N";
+            }
+        }
+        void button2U_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "U";
+            }
+            else
+            {
+                t1.Text += "U";
+            }
+        }
+        void button2S_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "S";
+            }
+            else
+            {
+                t1.Text += "S";
+            }
+        }
+        void button2A_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "A";
+            }
+            else
+            {
+                t1.Text += "A";
+            }
+        }
+        void button2R_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "R";
+            }
+            else
+            {
+                t1.Text += "R";
+            }
+        }
+        void check2_click(object sender, EventArgs e)
+        {
+            if (t1.Text == "CURTAINS")
+            {
+                score += 1;
+                l2.Text = score.ToString();
+                MessageBox.Show("Congratulations!!! You hav guessed it right....");
+            }
+            else
+            {
+                wrong += 1;
+                l4.Text = wrong.ToString();
+                MessageBox.Show("Oops.. Wrong..");
+            }
+            t1.Text = "";
+            bu7.Visible = false;
+            bu8.Visible = false;
+            bu9.Visible = false;
+            bu10.Visible = false;
+            bu11.Visible = false;
+            bu12.Visible = false;
+            bu13.Visible = false;
+            bu14.Visible = false;
+            bc2.Visible = false;
+            bc2.Enabled = false;
+
+            Image img3 = Image.FromFile("D:/shops/umbrella.jpg");
+            p1.Image = img3;
+
+            if (p1.Image == img3)
+            {
+                bu15.Text = "E";
+                bu15.ForeColor = Color.Pink;
+                bu15.BackColor = Color.Green;
+                bu15.Enabled = true;
+                bu15.Visible = true;
+                bu15.Size = new Size(50, 50);
+                bu15.Location = new Point(150, 400);
+                bu15.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu15);
+                bu15.Click += new EventHandler(button3E_click);
+
+                bu16.Text = "R";
+                bu16.ForeColor = Color.Pink;
+                bu16.BackColor = Color.Green;
+                bu16.Enabled = true;
+                bu16.Visible = true;
+                bu16.Size = new Size(50, 50);
+                bu16.Location = new Point(200, 400);
+                bu16.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu16);
+                bu16.Click += new EventHandler(button3R_click);
+
+                bu17.Text = "A";
+                bu17.ForeColor = Color.Pink;
+                bu17.BackColor = Color.Green;
+                bu17.Enabled = true;
+                bu17.Visible = true;
+                bu17.Size = new Size(50, 50);
+                bu17.Location = new Point(250, 400);
+                bu17.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu17);
+                bu17.Click += new EventHandler(button3A_click);
+
+                bu18.Text = "L";
+                bu18.ForeColor = Color.Red;
+                bu18.BackColor = Color.White;
+                bu18.Enabled = true;
+                bu18.Visible = true;
+                bu18.Size = new Size(50, 50);
+                bu18.Location = new Point(300, 400);
+                bu18.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu18);
+                bu18.Click += new EventHandler(button3L_click);
+
+                bu19.Text = "B";
+                bu19.ForeColor = Color.Pink;
+                bu19.BackColor = Color.Green;
+                bu19.Enabled = true;
+                bu19.Visible = true;
+                bu19.Size = new Size(50, 50);
+                bu19.Location = new Point(350, 400);
+                bu19.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu19);
+                bu19.Click += new EventHandler(button3B_click);
+
+                bu20.Text = "U";
+                bu20.ForeColor = Color.Pink;
+                bu20.BackColor = Color.Green;
+                bu20.Enabled = true;
+                bu20.Visible = true;
+                bu20.Size = new Size(50, 50);
+                bu20.Location = new Point(400, 400);
+                bu20.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu20);
+                bu20.Click += new EventHandler(button3U_click);
+
+                bu21.Text = "L";
+                bu21.ForeColor = Color.Red;
+                bu21.BackColor = Color.White;
+                bu21.Enabled = true;
+                bu21.Visible = true;
+                bu21.Size = new Size(50, 50);
+                bu21.Location = new Point(450, 400);
+                bu21.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu21);
+                bu21.Click += new EventHandler(button3L1_click);
+
+                bu22.Text = "M";
+                bu22.ForeColor = Color.Pink;
+                bu22.BackColor = Color.Green;
+                bu22.Enabled = true;
+                bu22.Visible = true;
+                bu22.Size = new Size(50, 50);
+                bu22.Location = new Point(500, 400);
+                bu22.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu22);
+                bu22.Click += new EventHandler(button3M_click);
+
+                bc3.Text = "CHecK";
+                bc3.ForeColor = Color.Red;
+                bc3.BackColor = Color.White;
+                bc3.Enabled = true;
+                bc3.Visible = true;
+                bc3.AutoSize = true;
+                bc3.Location = new Point(250, 500);
+                bc3.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bc3);
+                bc3.Click += new EventHandler(check3_click);
+            }
+        }
+        void button3E_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "E";
+            }
+            else
+            {
+                t1.Text += "E";
+            }
+        }
+        void button3R_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "R";
+            }
+            else
+            {
+                t1.Text += "R";
+            }
+        }
+        void button3A_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "A";
+            }
+            else
+            {
+                t1.Text += "A";
+            }
+        }
+        void button3L_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "L";
+            }
+            else
+            {
+                t1.Text += "L";
+            }
+        }
+        void button3B_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "B";
+            }
+            else
+            {
+                t1.Text += "B";
+            }
+        }
+        void button3U_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "U";
+            }
+            else
+            {
+                t1.Text += "U";
+            }
+        }
+        void button3L1_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "L";
+            }
+            else
+            {
+                t1.Text += "L";
+            }
+        }
+        void button3M_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "M";
+            }
+            else
+            {
+                t1.Text += "M";
+            }
+        }
+        void check3_click(object sender, EventArgs e)
+        {
+            if (t1.Text == "UMBRELLA")
+            {
+                score += 1;
+                l2.Text = score.ToString();
+                MessageBox.Show("Congratulations!!! You hav guessed it right....");
+            }
+            else
+            {
+                wrong += 1;
+                l4.Text = wrong.ToString();
+                MessageBox.Show("Oops.. Wrong..");
+            }
+            t1.Text = "";
+            bu15.Visible = false;
+            bu16.Visible = false;
+            bu17.Visible = false;
+            bu18.Visible = false;
+            bu19.Visible = false;
+            bu20.Visible = false;
+            bu21.Visible = false;
+            bu22.Visible = false;
+            bc3.Visible = false;
+            bc3.Enabled = false;
+            Image img4 = Image.FromFile("D:/shops/rainbow.jpg");
+            p1.Image = img4;
+
+            if (p1.Image == img4)
+            {
+                bu23.Text = "I";
+                bu23.ForeColor = Color.Pink;
+                bu23.BackColor = Color.Green;
+                bu23.Enabled = true;
+                bu23.Visible = true;
+                bu23.Size = new Size(50, 50);
+                bu23.Location = new Point(200, 400);
+                bu23.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu23);
+                bu23.Click += new EventHandler(button4I_click);
+
+                bu24.Text = "O";
+                bu24.ForeColor = Color.Pink;
+                bu24.BackColor = Color.Green;
+                bu24.Enabled = true;
+                bu24.Visible = true;
+                bu24.Size = new Size(50, 50);
+                bu24.Location = new Point(250, 400);
+                bu24.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu24);
+                bu24.Click += new EventHandler(button4O_click);
+
+                bu25.Text = "R";
+                bu25.ForeColor = Color.Red;
+                bu25.BackColor = Color.White;
+                bu25.Enabled = true;
+                bu25.Visible = true;
+                bu25.Size = new Size(50, 50);
+                bu25.Location = new Point(300, 400);
+                bu25.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu25);
+                bu25.Click += new EventHandler(button4R_click);
+
+                bu26.Text = "W";
+                bu26.ForeColor = Color.Pink;
+                bu26.BackColor = Color.Green;
+                bu26.Enabled = true;
+                bu26.Visible = true;
+                bu26.Size = new Size(50, 50);
+                bu26.Location = new Point(350, 400);
+                bu26.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu26);
+                bu26.Click += new EventHandler(button4W_click);
+
+                bu27.Text = "N";
+                bu27.ForeColor = Color.Pink;
+                bu27.BackColor = Color.Green;
+                bu27.Enabled = true;
+                bu27.Visible = true;
+                bu27.Size = new Size(50, 50);
+                bu27.Location = new Point(400, 400);
+                bu27.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu27);
+                bu27.Click += new EventHandler(button4N_click);
+
+                bu28.Text = "A";
+                bu28.ForeColor = Color.Red;
+                bu28.BackColor = Color.White;
+                bu28.Enabled = true;
+                bu28.Visible = true;
+                bu28.Size = new Size(50, 50);
+                bu28.Location = new Point(450, 400);
+                bu28.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu28);
+                bu28.Click += new EventHandler(button4A_click);
+
+                bu29.Text = "B";
+                bu29.ForeColor = Color.Pink;
+                bu29.BackColor = Color.Green;
+                bu29.Enabled = true;
+                bu29.Visible = true;
+                bu29.Size = new Size(50, 50);
+                bu29.Location = new Point(500, 400);
+                bu29.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu29);
+                bu29.Click += new EventHandler(button4B_click);
+
+                bc4.Text = "CHecK";
+                bc4.ForeColor = Color.Red;
+                bc4.BackColor = Color.White;
+                bc4.Enabled = true;
+                bc4.Visible = true;
+                bc4.AutoSize = true;
+                bc4.Location = new Point(250, 500);
+                bc4.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bc4);
+                bc4.Click += new EventHandler(check4_click);
+            }
+        }
+        void button4I_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "I";
+            }
+            else
+            {
+                t1.Text += "I";
+            }
+        }
+        void button4O_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "O";
+            }
+            else
+            {
+                t1.Text += "O";
+            }
+        }
+        void button4R_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "R";
+            }
+            else
+            {
+                t1.Text += "R";
+            }
+        }
+        void button4W_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "W";
+            }
+            else
+            {
+                t1.Text += "W";
+            }
+        }
+        void button4N_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "N";
+            }
+            else
+            {
+                t1.Text += "N";
+            }
+        }
+        void button4A_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "A";
+            }
+            else
+            {
+                t1.Text += "A";
+            }
+        }
+        void button4B_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "B";
+            }
+            else
+            {
+                t1.Text += "B";
+            }
+        }
+        void check4_click(object sender, EventArgs e)
+        {
+            if (t1.Text == "RAINBOW")
+            {
+                score += 1;
+                l2.Text = score.ToString();
+                MessageBox.Show("Congratulations!!! You hav guessed it right....");
+            }
+            else
+            {
+                wrong += 1;
+                l4.Text = wrong.ToString();
+                MessageBox.Show("Oops.. Wrong..");
+            }
+            t1.Text = "";
+            bu23.Visible = false;
+            bu24.Visible = false;
+            bu25.Visible = false;
+            bu26.Visible = false;
+            bu27.Visible = false;
+            bu28.Visible = false;
+            bu29.Visible = false;
+            bc4.Enabled = false;
+            bc4.Visible = false;
+
+            Image img5 = Image.FromFile("D:/shops/elephant.jpg");
+            p1.Image = img5;
+
+            if (p1.Image == img5)
+            {
+                bu30.Text = "T";
+                bu30.ForeColor = Color.Pink;
+                bu30.BackColor = Color.Green;
+                bu30.Enabled = true;
+                bu30.Visible = true;
+                bu30.Size = new Size(50, 50);
+                bu30.Location = new Point(200, 400);
+                bu30.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu30);
+                bu30.Click += new EventHandler(button5T_click);
+
+                bu31.Text = "P";
+                bu31.ForeColor = Color.Pink;
+                bu31.BackColor = Color.Green;
+                bu31.Enabled = true;
+                bu31.Visible = true;
+                bu31.Size = new Size(50, 50);
+                bu31.Location = new Point(250, 400);
+                bu31.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu31);
+                bu31.Click += new EventHandler(button5P1_click);
+
+                bu32.Text = "H";
+                bu32.ForeColor = Color.Red;
+                bu32.BackColor = Color.White;
+                bu32.Enabled = true;
+                bu32.Visible = true;
+                bu32.Size = new Size(50, 50);
+                bu32.Location = new Point(300, 400);
+                bu32.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu32);
+                bu32.Click += new EventHandler(button5H1_click);
+
+                bu33.Text = "E";
+                bu33.ForeColor = Color.Pink;
+                bu33.BackColor = Color.Green;
+                bu33.Enabled = true;
+                bu33.Visible = true;
+                bu33.Size = new Size(50, 50);
+                bu33.Location = new Point(350, 400);
+                bu33.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu33);
+                bu33.Click += new EventHandler(buttonE1_click);
+
+                Button bu34 = new Button();
+                bu34.Text = "N";
+                bu34.ForeColor = Color.Pink;
+                bu34.BackColor = Color.Green;
+                bu34.Enabled = true;
+                bu34.Visible = true;
+                bu34.Size = new Size(50, 50);
+                bu34.Location = new Point(400, 400);
+                bu34.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu34);
+                bu34.Click += new EventHandler(button5N_click);
+
+                bu35.Text = "E";
+                bu35.ForeColor = Color.Pink;
+                bu35.BackColor = Color.Green;
+                bu35.Enabled = true;
+                bu35.Visible = true;
+                bu35.Size = new Size(50, 50);
+                bu35.Location = new Point(450, 400);
+                bu35.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu35);
+                bu35.Click += new EventHandler(buttonE2_click);
+
+                bu36.Text = "L";
+                bu36.ForeColor = Color.Red;
+                bu36.BackColor = Color.White;
+                bu36.Enabled = true;
+                bu36.Visible = true;
+                bu36.Size = new Size(50, 50);
+                bu36.Location = new Point(500, 400);
+                bu36.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu36);
+                bu36.Click += new EventHandler(button5L_click);
+
+                bu37.Text = "A";
+                bu37.ForeColor = Color.Red;
+                bu37.BackColor = Color.White;
+                bu37.Enabled = true;
+                bu37.Visible = true;
+                bu37.Size = new Size(50, 50);
+                bu37.Location = new Point(550, 400);
+                bu37.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bu37);
+                bu37.Click += new EventHandler(button5A_click);
+
+                bc5.Text = "CHecK";
+                bc5.ForeColor = Color.Red;
+                bc5.BackColor = Color.White;
+                bc5.Enabled = true;
+                bc5.Visible = true;
+                bc5.AutoSize = true;
+                bc5.Location = new Point(250, 500);
+                bc5.Font = new Font("Arial", 17, FontStyle.Bold);
+                this.Controls.Add(bc5);
+                bc5.Click += new EventHandler(check5_click);
+            }
+        }
+        void button5T_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "T";
+            }
+            else
+            {
+                t1.Text += "T";
+            }
+        }
+        void button5P1_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "P";
+            }
+            else
+            {
+                t1.Text += "P";
+            }
+        }
+        void button5H1_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "H";
+            }
+            else
+            {
+                t1.Text += "H";
+            }
+        }
+        void buttonE1_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "E";
+            }
+            else
+            {
+                t1.Text += "E";
+            }
+        }
+        void button5N_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "N";
+            }
+            else
+            {
+                t1.Text += "N";
+            }
+        }
+        void buttonE2_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "E";
+            }
+            else
+            {
+                t1.Text += "E";
+            }
+        }
+        void button5L_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "L";
+            }
+            else
+            {
+                t1.Text += "L";
+            }
+        }
+        void button5A_click(object sender, EventArgs e)
+        {
+            if (t1.Text == " ")
+            {
+                t1.Text = "A";
+            }
+            else
+            {
+                t1.Text += "A";
+            }
+        }
+        void check5_click(object sender, EventArgs e)
+        {
+            if (t1.Text == "ELEPHANT")
+            {
+                score += 1;
+                l2.Text = score.ToString();
+                MessageBox.Show("Congratulations!!! You hav guessed it right....");
+            }
+            else
+            {
+                wrong += 1;
+                l4.Text = wrong.ToString();
+                MessageBox.Show("Oops.. Wrong..");
+            }
+            t1.Text = "";
+            bu30.Visible = false;
+            bu31.Visible = false;
+            bu32.Visible = false;
+            bu33.Visible = false;
+            bu34.Visible = false;
+            bu34.Enabled = false;
+            bu35.Visible = false;
+            bu36.Visible = false;
+            bu37.Visible = false;
+            bc5.Enabled = false;
+            bc5.Visible = false;
+            if (p1.Image != null)
+            {
+                p1.Image.Dispose();
+                p1.Image = null;
+            }
+            string message = "You Scored " + score + " out of 5";
+            if (MessageBox.Show(message, "Score", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                if (MessageBox.Show("Do you want to Retry? ", "Retry", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    
+                    this.Close();
+                }
+                else
+                {
+                    Form3 NewForm = new Form3();
+                    NewForm.Show();
+                    this.Dispose(false);
+                }
+            }
+        }
+    }
+}
+*/
