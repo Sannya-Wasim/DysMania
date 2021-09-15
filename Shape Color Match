@@ -1,0 +1,1139 @@
+/*
+FORM 1 – Name with start button
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace shapecolormatch
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        Button b1 = new Button();
+        Label l1 = new Label();
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.Location = new Point(0, 0);
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.BackColor = Color.SkyBlue;
+            BackgroundImage = new Bitmap("D:/Wonders/screen-8.jpg");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            Image picture;
+            ImageLayout layout;
+            picture = BackgroundImage;
+            layout = BackgroundImageLayout;
+            this.BackgroundImage = picture;
+            this.BackgroundImageLayout = layout;
+            
+            l1.AutoSize = true;
+            l1.Text = "Shape Color Match";
+            l1.BackColor = Color.LawnGreen;
+            l1.BorderStyle = BorderStyle.Fixed3D;
+            l1.Font = new Font("Showcard Gothic", 50, FontStyle.Bold);
+            this.Controls.Add(l1);
+            l1.Location = new Point(310,550);
+            b1.Text = "Click Here";
+            b1.Location = new Point(430,50);
+            b1.Font = new Font("Goudy Stout", 28, FontStyle.Bold);
+            b1.AutoSize = true;
+            b1.BackColor = Color.LightCoral;
+            this.Controls.Add(b1);
+            b1.Click += new EventHandler(button1_click);
+        }
+        void button1_click(object sender, EventArgs e)
+        {
+            Form f1 = new Form2();
+            f1.Show();
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Random r1 = new Random();
+            int red = r1.Next(0, 255);
+            int green = r1.Next(0, 255);
+            int blue = r1.Next(0, 255);
+            l1.ForeColor = Color.FromArgb(red, green, blue);
+            b1.ForeColor = Color.FromArgb(red, green, blue);
+        }
+    }
+}
+
+FORM 2 – Main Game
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace shapecolormatch
+{
+    public partial class Form2 : Form
+    {
+        public Form2()
+        {
+            InitializeComponent();
+        }
+        Label l5 = new Label();
+        Label l6 = new Label();
+        Label l7 = new Label();
+        Label l8 = new Label();
+        Label l9 = new Label();
+        Label l1 = new Label();
+        Label l2 = new Label();
+        Label l3 = new Label();
+        Label l4 = new Label();
+        Label l0 = new Label();
+        Label l11 = new Label();
+        Label l22 = new Label();
+        Label l33 = new Label();
+        Label l44 = new Label();
+        Label l55 = new Label();
+        Label l66 = new Label();
+        Button b2 = new Button();
+        PictureBox p1 = new PictureBox();
+        PictureBox p2 = new PictureBox();
+        PictureBox p3 = new PictureBox();
+        PictureBox p4 = new PictureBox();
+        PictureBox p5 = new PictureBox();
+        PictureBox p6 = new PictureBox();
+        PictureBox p7 = new PictureBox();
+        PictureBox p8 = new PictureBox();
+        Button b3 = new Button();
+        Button b4 = new Button();
+        Button b5 = new Button();
+        Button b6 = new Button();
+        Button b7 = new Button();
+        Button b8 = new Button();
+        Button b9 = new Button();
+        Button b10 = new Button();
+        Button b11 = new Button();
+        Button b12 = new Button();
+        Button b13 = new Button();
+        Button b14 = new Button();
+        Button b15 = new Button();
+        Button b16 = new Button();
+        Button b17 = new Button();
+        Button b18 = new Button();
+        Button b19 = new Button();
+        Button b20 = new Button();
+        Button b21 = new Button();
+        Button b22 = new Button();
+        Button b23 = new Button();
+        Button b24 = new Button();
+        Button b25 = new Button();
+        Button b26 = new Button();
+        Button b27 = new Button();
+        Button b28 = new Button();
+        Button b29 = new Button();
+        Button b30 = new Button();
+        Button b31 = new Button();
+        Button b32 = new Button();
+        Button b33 = new Button();
+        Button b34 = new Button();
+        Button b35 = new Button();
+        Button b36 = new Button();
+        Button b37 = new Button();
+        Button b38 = new Button();
+        Button b39 = new Button();
+        Button b40 = new Button();
+        Button b41 = new Button();
+        Button b42 = new Button();
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            this.Location = new Point(0, 0);
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.BackColor = Color.SkyBlue;
+            BackgroundImage = new Bitmap("D:/Wonders/unnamed.jpg");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            Image picture;
+            ImageLayout layout;
+            picture = BackgroundImage;
+            layout = BackgroundImageLayout;
+            this.BackgroundImage = picture;
+            this.BackgroundImageLayout = layout;
+
+            l5.Text = "Select The aapropriate color of the shape from the given colors...!!!!";
+            l5.Visible = true;
+            l5.Size = new Size(400, 270);
+            l5.Location = new Point(470, 130);
+            l5.Font = new Font("Goudy Stout", 20, FontStyle.Bold);
+            l5.TextAlign = ContentAlignment.MiddleCenter;
+            l5.BackColor = Color.Red;
+            l5.ForeColor = Color.White;
+            this.Controls.Add(l5);
+
+            b2.Text = "Continue!!!";
+            b2.ForeColor = Color.White;
+            b2.BackColor = Color.Red;
+            b2.Enabled = true;
+            b2.Visible = true;
+            b2.Size = new Size(400, 100);
+            b2.Location = new Point(470, 400);
+            b2.Font = new Font("Arial", 17, FontStyle.Bold);
+            this.Controls.Add(b2);
+            b2.Click += new EventHandler(button);
+        }
+        void button(object sender, EventArgs e)
+        {
+            l5.Visible = false;
+            b2.Visible = false;
+
+            this.Controls.Add(p1);
+            p1.Enabled = true;
+            p1.Visible = true;
+            p1.Left = 800;
+            p1.Top = 200;
+            p1.BackColor = Color.Transparent;
+            p1.Size = new Size(300, 300);
+            p1.SizeMode = PictureBoxSizeMode.StretchImage;
+            Image img1 = Image.FromFile("D:/Wonders/star.png");
+            p1.Image = img1;
+
+            l4.Text = "Star";
+            l4.Visible = true;
+            l4.AutoSize = true;
+            l4.Location = new Point(850, 130);
+            l4.Font = new Font("Goudy Stout", 25, FontStyle.Bold);
+            l4.TextAlign = ContentAlignment.MiddleCenter;
+            l4.BackColor = Color.Transparent;
+            l4.ForeColor = Color.Purple;
+            this.Controls.Add(l4);
+
+            b3.Text = "";
+            b3.BackColor = Color.Red;
+            b3.Enabled = true;
+            b3.Visible = true;
+            b3.Size = new Size(100, 50);
+            b3.Location = new Point(300, 300);
+            this.Controls.Add(b3);
+            b3.Click += new EventHandler(b3_click);
+
+            b4.Text = "";
+            b4.BackColor = Color.Green;
+            b4.Enabled = true;
+            b4.Visible = true;
+            b4.Size = new Size(100, 50);
+            b4.Location = new Point(400, 300);
+            this.Controls.Add(b4);
+            b4.Click += new EventHandler(b4_click);
+
+            b5.Text = "";
+            b5.BackColor = Color.Purple;
+            b5.Enabled = true;
+            b5.Visible = true;
+            b5.Size = new Size(100, 50);
+            b5.Location = new Point(300, 350);
+            this.Controls.Add(b5);
+            b5.Click += new EventHandler(b1_click);
+
+            b6.Text = "";
+            b6.BackColor = Color.Yellow;
+            b6.Enabled = true;
+            b6.Visible = true;
+            b6.Size = new Size(100, 50);
+            b6.Location = new Point(400, 350);
+            this.Controls.Add(b6);
+            b6.Click += new EventHandler(b6_click);
+        }
+        void b1_click(object sender, EventArgs e)
+        {
+            p1.Visible = false;
+            p1.Enabled = false;
+            b3.Enabled = false;
+            b3.Visible = false;
+            b4.Enabled = false;
+            b4.Visible = false;
+            b5.Enabled = false;
+            b5.Visible = false;
+            b6.Enabled = false;
+            b6.Visible = false;
+            l4.Visible = false;
+            l4.Enabled = false;
+
+            l5.Text = "Congratulations!!\n You have guessed it Right";
+            l5.Visible = true;
+            l5.Size = new Size(400, 230);
+            l5.Location = new Point(470, 170);
+            l5.Font = new Font("Goudy Stout", 14, FontStyle.Bold);
+            l5.TextAlign = ContentAlignment.MiddleCenter;
+            l5.BackColor = Color.Aquamarine;
+            l5.ForeColor = Color.Black;
+            this.Controls.Add(l5);
+
+            b7.Text = "Jump to Next Shape";
+            b7.ForeColor = Color.White;
+            b7.BackColor = Color.Red;
+            b7.Enabled = true;
+            b7.Visible = true;
+            b7.Size = new Size(400, 100);
+            b7.Location = new Point(470, 400);
+            b7.Font = new Font("Arial", 14, FontStyle.Bold);
+            this.Controls.Add(b7);
+            b7.Click += new EventHandler(button2_click);
+        }
+        void button2_click(object sender, EventArgs e)
+        {
+            l5.Visible = false;
+            b7.Visible = false;
+            l5.Enabled = false;
+            b7.Enabled = false;
+
+            this.Controls.Add(p2);
+            p2.Enabled = true;
+            p2.Visible = true;
+            p2.Left = 800;
+            p2.Top = 200;
+            p2.BackColor = Color.Transparent;
+            p2.Size = new Size(300, 300);
+            p2.SizeMode = PictureBoxSizeMode.StretchImage;
+            Image img1 = Image.FromFile("D:/Wonders/triangle.png");
+            p2.Image = img1;
+
+            l0.Text = "Triangle";
+            l0.Visible = true;
+            l0.AutoSize = true;
+            l0.Location = new Point(780, 130);
+            l0.Font = new Font("Goudy Stout", 25, FontStyle.Bold);
+            l0.TextAlign = ContentAlignment.MiddleCenter;
+            l0.BackColor = Color.Transparent;
+            l0.ForeColor = Color.Red;
+            this.Controls.Add(l0);
+
+            b8.Text = "";
+            b8.BackColor = Color.Red;
+            b8.Enabled = true;
+            b8.Visible = true;
+            b8.Size = new Size(100, 50);
+            b8.Location = new Point(300, 300);
+            this.Controls.Add(b8);
+            b8.Click += new EventHandler(b8_click);
+
+            b9.Text = "";
+            b9.BackColor = Color.Gray;
+            b9.Enabled = true;
+            b9.Visible = true;
+            b9.Size = new Size(100, 50);
+            b9.Location = new Point(400, 300);
+            this.Controls.Add(b9);
+            b9.Click += new EventHandler(b9_click);
+
+            b10.Text = "";
+            b10.BackColor = Color.LemonChiffon;
+            b10.Enabled = true;
+            b10.Visible = true;
+            b10.Size = new Size(100, 50);
+            b10.Location = new Point(300, 350);
+            this.Controls.Add(b10);
+            b10.Click += new EventHandler(b10_click);
+
+            b11.Text = "";
+            b11.BackColor = Color.Pink;
+            b11.Enabled = true;
+            b11.Visible = true;
+            b11.Size = new Size(100, 50);
+            b11.Location = new Point(400, 350);
+            this.Controls.Add(b11);
+            b11.Click += new EventHandler(b11_click);
+        }
+        void b3_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b4_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b6_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b8_click(object sender, EventArgs e)
+        {
+            p2.Visible = false;
+            p2.Enabled = false;
+            b8.Enabled = false;
+            b8.Visible = false;
+            b9.Enabled = false;
+            b9.Visible = false;
+            b10.Enabled = false;
+            b10.Visible = false;
+            b11.Enabled = false;
+            b11.Visible = false;
+            l0.Visible = false;
+            l0.Enabled = false;
+
+            l7.Text = "Congratulations!!\n You have guessed it Right";
+            l7.Visible = true;
+            l7.Size = new Size(400, 230);
+            l7.Location = new Point(470, 170);
+            l7.Font = new Font("Goudy Stout", 14, FontStyle.Bold);
+            l7.TextAlign = ContentAlignment.MiddleCenter;
+            l7.BackColor = Color.Aquamarine;
+            l7.ForeColor = Color.Black;
+            this.Controls.Add(l7);
+
+            b12.Text = "Jump to Next Shape";
+            b12.ForeColor = Color.White;
+            b12.BackColor = Color.Red;
+            b12.Enabled = true;
+            b12.Visible = true;
+            b12.Size = new Size(400, 100);
+            b12.Location = new Point(470, 400);
+            b12.Font = new Font("Arial", 14, FontStyle.Bold);
+            this.Controls.Add(b12);
+            b12.Click += new EventHandler(bu1_click);
+        }
+        void b9_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b10_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b11_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void bu1_click(object sender, EventArgs e)
+        {
+            l7.Visible = false;
+            b12.Visible = false;
+            l7.Enabled = false;
+            b12.Enabled = false;
+
+            this.Controls.Add(p3);
+            p3.Enabled = true;
+            p3.Visible = true;
+            p3.Left = 800;
+            p3.Top = 200;
+            p3.BackColor = Color.Transparent;
+            p3.Size = new Size(300, 300);
+            p3.SizeMode = PictureBoxSizeMode.StretchImage;
+            Image img1 = Image.FromFile("D:/Wonders/pink-circle.png");
+            p3.Image = img1;
+            l11.Text = "Circle";
+            l11.Visible = true;
+            l11.AutoSize = true;
+            l11.Location = new Point(820, 130);
+            l11.Font = new Font("Goudy Stout", 25, FontStyle.Bold);
+            l11.TextAlign = ContentAlignment.MiddleCenter;
+            l11.BackColor = Color.Transparent;
+            l11.ForeColor = Color.DeepPink;
+            this.Controls.Add(l11);
+
+            b13.Text = "";
+            b13.BackColor = Color.Magenta;
+            b13.Enabled = true;
+            b13.Visible = true;
+            b13.Size = new Size(100, 50);
+            b13.Location = new Point(300, 300);
+            this.Controls.Add(b13);
+            b13.Click += new EventHandler(b13_click);
+
+            b14.Text = "";
+            b14.BackColor = Color.Blue;
+            b14.Enabled = true;
+            b14.Visible = true;
+            b14.Size = new Size(100, 50);
+            b14.Location = new Point(400, 300);
+            this.Controls.Add(b14);
+            b14.Click += new EventHandler(b14_click);
+
+            b15.Text = "";
+            b15.BackColor = Color.Green;
+            b15.Enabled = true;
+            b15.Visible = true;
+            b15.Size = new Size(100, 50);
+            b15.Location = new Point(300, 350);
+            this.Controls.Add(b15);
+            b15.Click += new EventHandler(b15_click);
+
+            b16.Text = "";
+            b16.BackColor = Color.DeepPink;
+            b16.Enabled = true;
+            b16.Visible = true;
+            b16.Size = new Size(100, 50);
+            b16.Location = new Point(400, 350);
+            this.Controls.Add(b16);
+            b16.Click += new EventHandler(b16_click);
+        }
+        void b13_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b14_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b15_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b16_click(object sender, EventArgs e)
+        {
+            p3.Visible = false;
+            p3.Enabled = false;
+            b13.Enabled = false;
+            b13.Visible = false;
+            b14.Enabled = false;
+            b14.Visible = false;
+            b15.Enabled = false;
+            b15.Visible = false;
+            b16.Enabled = false;
+            b16.Visible = false;
+            l11.Visible = false;
+            l11.Enabled = false;
+
+            l8.Text = "Congratulations!!\n You have guessed it Right";
+            l8.Visible = true;
+            l8.Size = new Size(400, 230);
+            l8.Location = new Point(470, 170);
+            l8.Font = new Font("Goudy Stout", 14, FontStyle.Bold);
+            l8.TextAlign = ContentAlignment.MiddleCenter;
+            l8.BackColor = Color.Aquamarine;
+            l8.ForeColor = Color.Black;
+            this.Controls.Add(l8);
+
+            b17.Text = "Jump to Next Shape";
+            b17.ForeColor = Color.White;
+            b17.BackColor = Color.Red;
+            b17.Enabled = true;
+            b17.Visible = true;
+            b17.Size = new Size(400, 100);
+            b17.Location = new Point(470, 400);
+            b17.Font = new Font("Arial", 14, FontStyle.Bold);
+            this.Controls.Add(b17);
+            b17.Click += new EventHandler(bu2_click);
+        }
+        void bu2_click(object sender, EventArgs e)
+        {
+            l8.Visible = false;
+            b17.Visible = false;
+            l8.Enabled = false;
+            b17.Enabled = false;
+
+            this.Controls.Add(p4);
+            p4.Enabled = true;
+            p4.Visible = true;
+            p4.Left = 800;
+            p4.Top = 200;
+            p4.BackColor = Color.Transparent;
+            p4.Size = new Size(300, 300);
+            p4.SizeMode = PictureBoxSizeMode.StretchImage;
+            Image img1 = Image.FromFile("D:/Wonders/orange.png");
+            p4.Image = img1;
+
+            l22.Text = "Rounded rectangle";
+            l22.Visible = true;
+            l22.AutoSize = true;
+            l22.Location = new Point(670, 130);
+            l22.Font = new Font("Goudy Stout", 16, FontStyle.Bold);
+            l22.BackColor = Color.Transparent;
+            l22.ForeColor = Color.DarkOrange;
+            this.Controls.Add(l22);
+
+            b18.Text = "";
+            b18.BackColor = Color.Brown;
+            b18.Enabled = true;
+            b18.Visible = true;
+            b18.Size = new Size(100, 50);
+            b18.Location = new Point(300, 300);
+            this.Controls.Add(b18);
+            b18.Click += new EventHandler(b18_click);
+
+            b19.Text = "";
+            b19.BackColor = Color.Azure;
+            b19.Enabled = true;
+            b19.Visible = true;
+            b19.Size = new Size(100, 50);
+            b19.Location = new Point(400, 300);
+            this.Controls.Add(b19);
+            b19.Click += new EventHandler(b19_click);
+
+            b20.Text = "";
+            b20.BackColor = Color.DeepSkyBlue;
+            b20.Enabled = true;
+            b20.Visible = true;
+            b20.Size = new Size(100, 50);
+            b20.Location = new Point(300, 350);
+            this.Controls.Add(b20);
+            b20.Click += new EventHandler(b20_click);
+
+            b21.Text = "";
+            b21.BackColor = Color.DarkOrange;
+            b21.Enabled = true;
+            b21.Visible = true;
+            b21.Size = new Size(100, 50);
+            b21.Location = new Point(400, 350);
+            this.Controls.Add(b21);
+            b21.Click += new EventHandler(b21_click);
+        }
+        void b18_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b19_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b20_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b21_click(object sender, EventArgs e)
+
+        {
+            p4.Visible = false;
+            p4.Enabled = false;
+            b18.Enabled = false;
+            b18.Visible = false;
+            b19.Enabled = false;
+            b19.Visible = false;
+            b20.Enabled = false;
+            b20.Visible = false;
+            b21.Enabled = false;
+            b21.Visible = false;
+            l22.Visible = false;
+            l22.Enabled = false;
+
+            l6.Text = "Congratulations!!\n You have guessed it Right";
+            l6.Visible = true;
+            l6.Size = new Size(400, 230);
+            l6.Location = new Point(470, 170);
+            l6.Font = new Font("Goudy Stout", 14, FontStyle.Bold);
+            l6.TextAlign = ContentAlignment.MiddleCenter;
+            l6.BackColor = Color.Aquamarine;
+            l6.ForeColor = Color.Black;
+            this.Controls.Add(l6);
+
+            b22.Text = "Jump to Next Shape";
+            b22.ForeColor = Color.White;
+            b22.BackColor = Color.Red;
+            b22.Enabled = true;
+            b22.Visible = true;
+            b22.Size = new Size(400, 100);
+            b22.Location = new Point(470, 400);
+            b22.Font = new Font("Arial", 14, FontStyle.Bold);
+            this.Controls.Add(b22);
+            b22.Click += new EventHandler(bu3_click);
+        }
+        void bu3_click(object sender, EventArgs e)
+        {
+            l6.Visible = false;
+            b22.Visible = false;
+            l6.Enabled = false;
+            b22.Enabled = false;
+
+            this.Controls.Add(p5);
+            p5.Enabled = true;
+            p5.Visible = true;
+            p5.Left = 800;
+            p5.Top = 200;
+            p5.BackColor = Color.Transparent;
+            p5.Size = new Size(300, 300);
+            p5.SizeMode = PictureBoxSizeMode.StretchImage;
+            Image img1 = Image.FromFile("D:/Wonders/pen2.jpg");
+            p5.Image = img1;
+
+            l33.Text = "Pentagon";
+            l33.Visible = true;
+            l33.AutoSize = true;
+            l33.Location = new Point(780, 130);
+            l33.Font = new Font("Goudy Stout", 25, FontStyle.Bold);
+            l33.TextAlign = ContentAlignment.MiddleCenter;
+            l33.BackColor = Color.Transparent;
+            l33.ForeColor = Color.DeepSkyBlue;
+            this.Controls.Add(l33);
+
+            b23.Text = "";
+            b23.BackColor = Color.YellowGreen;
+            b23.Enabled = true;
+            b23.Visible = true;
+            b23.Size = new Size(100, 50);
+            b23.Location = new Point(300, 300);
+            this.Controls.Add(b23);
+            b23.Click += new EventHandler(b23_click);
+
+            b24.Text = "";
+            b24.BackColor = Color.DarkOrchid;
+            b24.Enabled = true;
+            b24.Visible = true;
+            b24.Size = new Size(100, 50);
+            b24.Location = new Point(400, 300);
+            this.Controls.Add(b24);
+            b24.Click += new EventHandler(b24_click);
+
+            b25.Text = "";
+            b25.BackColor = Color.DeepSkyBlue;
+            b25.Enabled = true;
+            b25.Visible = true;
+            b25.Size = new Size(100, 50);
+            b25.Location = new Point(300, 350);
+            this.Controls.Add(b25);
+            b25.Click += new EventHandler(b25_click);
+
+            b26.Text = "";
+            b26.BackColor = Color.ForestGreen;
+            b26.Enabled = true;
+            b26.Visible = true;
+            b26.Size = new Size(100, 50);
+            b26.Location = new Point(400, 350);
+            this.Controls.Add(b26);
+            b26.Click += new EventHandler(b26_click);
+        }
+        void b23_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b24_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b26_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b25_click(object sender, EventArgs e)
+
+        {
+            p5.Visible = false;
+            p5.Enabled = false;
+            b23.Enabled = false;
+            b23.Visible = false;
+            b24.Enabled = false;
+            b24.Visible = false;
+            b25.Enabled = false;
+            b25.Visible = false;
+            b26.Enabled = false;
+            b26.Visible = false;
+            l33.Visible = false;
+            l33.Enabled = false;
+
+            l9.Text = "Congratulations!!\n You have guessed it Right";
+            l9.Visible = true;
+            l9.Size = new Size(400, 230);
+            l9.Location = new Point(470, 170);
+            l9.Font = new Font("Goudy Stout", 14, FontStyle.Bold);
+            l9.TextAlign = ContentAlignment.MiddleCenter;
+            l9.BackColor = Color.Aquamarine;
+            l9.ForeColor = Color.Black;
+            this.Controls.Add(l9);
+
+            b27.Text = "Jump to Next Shape";
+            b27.ForeColor = Color.White;
+            b27.BackColor = Color.Red;
+            b27.Enabled = true;
+            b27.Visible = true;
+            b27.Size = new Size(400, 100);
+            b27.Location = new Point(470, 400);
+            b27.Font = new Font("Arial", 14, FontStyle.Bold);
+            this.Controls.Add(b27);
+            b27.Click += new EventHandler(bu4_click);
+        }
+        void bu4_click(object sender, EventArgs e)
+        {
+            l9.Visible = false;
+            b27.Visible = false;
+            l9.Enabled = false;
+            b27.Enabled = false;
+
+            this.Controls.Add(p6);
+            p6.Enabled = true;
+            p6.Visible = true;
+            p6.Left = 800;
+            p6.Top = 200;
+            p6.BackColor = Color.Transparent;
+            p6.Size = new Size(300, 300);
+            p6.SizeMode = PictureBoxSizeMode.StretchImage;
+            Image img1 = Image.FromFile("D:/Wonders/heart.png");
+            p6.Image = img1;
+
+            l44.Text = "Heart";
+            l44.Visible = true;
+            l44.AutoSize = true;
+            l44.Location = new Point(820, 130);
+            l44.Font = new Font("Goudy Stout", 25, FontStyle.Bold);
+            l44.TextAlign = ContentAlignment.MiddleCenter;
+            l44.BackColor = Color.Transparent;
+            l44.ForeColor = Color.Plum;
+            this.Controls.Add(l44);
+
+            b28.Text = "";
+            b28.BackColor = Color.Black;
+            b28.Enabled = true;
+            b28.Visible = true;
+            b28.Size = new Size(100, 50);
+            b28.Location = new Point(300, 300);
+            this.Controls.Add(b28);
+            b28.Click += new EventHandler(b28_click);
+
+            b29.Text = "";
+            b29.BackColor = Color.Maroon;
+            b29.Enabled = true;
+            b29.Visible = true;
+            b29.Size = new Size(100, 50);
+            b29.Location = new Point(400, 300);
+            this.Controls.Add(b29);
+            b29.Click += new EventHandler(b29_click);
+
+            b30.Text = "";
+            b30.BackColor = Color.Plum;
+            b30.Enabled = true;
+            b30.Visible = true;
+            b30.Size = new Size(100, 50);
+            b30.Location = new Point(300, 350);
+            this.Controls.Add(b30);
+            b30.Click += new EventHandler(b30_click);
+            
+            b31.Text = "";
+            b31.BackColor = Color.BlanchedAlmond;
+            b31.Enabled = true;
+            b31.Visible = true;
+            b31.Size = new Size(100, 50);
+            b31.Location = new Point(400, 350);
+            this.Controls.Add(b31);
+            b31.Click += new EventHandler(b31_click);
+        }
+        void b28_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b29_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b31_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b30_click(object sender, EventArgs e)
+
+        {
+            p6.Visible = false;
+            p6.Enabled = false;
+            b28.Enabled = false;
+            b28.Visible = false;
+            b29.Enabled = false;
+            b29.Visible = false;
+            b30.Enabled = false;
+            b30.Visible = false;
+            b31.Enabled = false;
+            b31.Visible = false;
+            l44.Visible = false;
+            l44.Enabled = false;
+
+            l1.Text = "Congratulations!!\n You have guessed it Right";
+            l1.Visible = true;
+            l1.Size = new Size(400, 230);
+            l1.Location = new Point(470, 170);
+            l1.Font = new Font("Goudy Stout", 14, FontStyle.Bold);
+            l1.TextAlign = ContentAlignment.MiddleCenter;
+            l1.BackColor = Color.Aquamarine;
+            l1.ForeColor = Color.Black;
+            this.Controls.Add(l1);
+
+            b32.Text = "Jump to Next Shape";
+            b32.ForeColor = Color.White;
+            b32.BackColor = Color.Red;
+            b32.Enabled = true;
+            b32.Visible = true;
+            b32.Size = new Size(400, 100);
+            b32.Location = new Point(470, 400);
+            b32.Font = new Font("Arial", 14, FontStyle.Bold);
+            this.Controls.Add(b32);
+            b32.Click += new EventHandler(bu5_click);
+        }
+        void bu5_click(object sender, EventArgs e)
+        {
+            l1.Visible = false;
+            b32.Visible = false;
+            l1.Enabled = false;
+            b32.Enabled = false;
+
+            this.Controls.Add(p7);
+            p7.Enabled = true;
+            p7.Visible = true;
+            p7.Left = 800;
+            p7.Top = 200;
+            p7.BackColor = Color.Transparent;
+            p7.Size = new Size(300, 300);
+            p7.SizeMode = PictureBoxSizeMode.StretchImage;
+            Image img1 = Image.FromFile("D:/Wonders/hex.png");
+            p7.Image = img1;
+
+            l66.Text = "Hexagon";
+            l66.Visible = true;
+            l66.AutoSize = true;
+            l66.Location = new Point(800, 130);
+            l66.Font = new Font("Goudy Stout", 25, FontStyle.Bold);
+            l66.TextAlign = ContentAlignment.MiddleCenter;
+            l66.BackColor = Color.Transparent;
+            l66.ForeColor = Color.Lime;
+            this.Controls.Add(l66);
+
+            b33.Text = "";
+            b33.BackColor = Color.Lime;
+            b33.Enabled = true;
+            b33.Visible = true;
+            b33.Size = new Size(100, 50);
+            b33.Location = new Point(300, 300);
+            this.Controls.Add(b33);
+            b33.Click += new EventHandler(b33_click);
+
+            b34.Text = "";
+            b34.BackColor = Color.Aqua;
+            b34.Enabled = true;
+            b34.Visible = true;
+            b34.Size = new Size(100, 50);
+            b34.Location = new Point(400, 300);
+            this.Controls.Add(b34);
+            b34.Click += new EventHandler(b34_click);
+
+            b35.Text = "";
+            b35.BackColor = Color.Gold;
+            b35.Enabled = true;
+            b35.Visible = true;
+            b35.Size = new Size(100, 50);
+            b35.Location = new Point(300, 350);
+            this.Controls.Add(b35);
+            b35.Click += new EventHandler(b35_click);
+
+            b36.Text = "";
+            b36.BackColor = Color.CadetBlue ;
+            b36.Enabled = true;
+            b36.Visible = true;
+            b36.Size = new Size(100, 50);
+            b36.Location = new Point(400, 350);
+            this.Controls.Add(b36);
+            b36.Click += new EventHandler(b36_click);
+        }
+        void b34_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b35_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b36_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b33_click(object sender, EventArgs e)
+        {
+            p7.Visible = false;
+            p7.Enabled = false;
+            b33.Enabled = false;
+            b33.Visible = false;
+            b34.Enabled = false;
+            b34.Visible = false;
+            b35.Enabled = false;
+            b35.Visible = false;
+            b36.Enabled = false;
+            b36.Visible = false;
+            l66.Visible = false;
+            l66.Enabled = false;
+
+            l2.Text = "Congratulations!!\n You have guessed it Right";
+            l2.Visible = true;
+            l2.Size = new Size(400, 230);
+            l2.Location = new Point(470, 170);
+            l2.Font = new Font("Goudy Stout", 14, FontStyle.Bold);
+            l2.TextAlign = ContentAlignment.MiddleCenter;
+            l2.BackColor = Color.Aquamarine;
+            l2.ForeColor = Color.Black;
+            this.Controls.Add(l2);
+
+            b37.Text = "Jump to Next Shape";
+            b37.ForeColor = Color.White;
+            b37.BackColor = Color.Red;
+            b37.Enabled = true;
+            b37.Visible = true;
+            b37.Size = new Size(400, 100);
+            b37.Location = new Point(470, 400);
+            b37.Font = new Font("Arial", 14, FontStyle.Bold);
+            this.Controls.Add(b37);
+            b37.Click += new EventHandler(bu6_click);
+        }
+        void bu6_click(object sender, EventArgs e)
+        {
+            l2.Visible = false;
+            b37.Visible = false;
+            l2.Enabled = false;
+            b37.Enabled = false;
+
+            this.Controls.Add(p8);
+            p8.Enabled = true;
+            p8.Visible = true;
+            p8.Left = 800;
+            p8.Top = 200;
+            p8.BackColor = Color.Transparent;
+            p8.Size = new Size(300, 300);
+            p8.SizeMode = PictureBoxSizeMode.StretchImage;
+            Image img1 = Image.FromFile("D:/Wonders/cres2.png");
+            p8.Image = img1;
+
+            l55.Text = "Crescent";
+            l55.Visible = true;
+            l55.AutoSize = true;
+            l55.Location = new Point(800, 130);
+            l55.Font = new Font("Goudy Stout", 25, FontStyle.Bold);
+            l55.TextAlign = ContentAlignment.MiddleCenter;
+            l55.BackColor = Color.Transparent;
+            l55.ForeColor = Color.Navy;
+            this.Controls.Add(l55);
+
+            b38.Text = "";
+            b38.BackColor = Color.Crimson;
+            b38.Enabled = true;
+            b38.Visible = true;
+            b38.Size = new Size(100, 50);
+            b38.Location = new Point(300, 300);
+            this.Controls.Add(b38);
+            b38.Click += new EventHandler(b38_click);
+
+            b39.Text = "";
+            b39.BackColor = Color.SaddleBrown;
+            b39.Enabled = true;
+            b39.Visible = true;
+            b39.Size = new Size(100, 50);
+            b39.Location = new Point(400, 300);
+            this.Controls.Add(b39);
+            b39.Click += new EventHandler(b39_click);
+
+            b40.Text = "";
+            b40.BackColor = Color.Navy;
+            b40.Enabled = true;
+            b40.Visible = true;
+            b40.Size = new Size(100, 50);
+            b40.Location = new Point(300, 350);
+            this.Controls.Add(b40);
+            b40.Click += new EventHandler(b40_click);
+
+            b41.Text = "";
+            b41.BackColor = Color.ForestGreen;
+            b41.Enabled = true;
+            b41.Visible = true;
+            b41.Size = new Size(100, 50);
+            b41.Location = new Point(400, 350);
+            this.Controls.Add(b41);
+            b41.Click += new EventHandler(b41_click);
+        }
+        void b38_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b39_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b41_click(object sender, EventArgs e)
+        {
+            string message = "Wrong!! Try Again\nPress Ok to continue..";
+            MessageBoxButtons bu = MessageBoxButtons.OK;
+            MessageBox.Show(message, "Warning", bu, MessageBoxIcon.Warning);
+        }
+        void b40_click(object sender, EventArgs e)
+        {
+            p8.Visible = false;
+            p8.Enabled = false;
+            b38.Enabled = false;
+            b38.Visible = false;
+            b39.Enabled = false;
+            b39.Visible = false;
+            b40.Enabled = false;
+            b40.Visible = false;
+            b41.Enabled = false;
+            b41.Visible = false;
+            l55.Visible = false;
+            l55.Enabled = false;
+
+            l3.Text = "Champion!!!\n You have completed the level\n Want to replay??";
+            l3.Visible = true;
+            l3.Size = new Size(400, 230);
+            l3.Location = new Point(470, 170);
+            l3.Font = new Font("Goudy Stout", 14, FontStyle.Bold);
+            l3.TextAlign = ContentAlignment.MiddleCenter;
+            l3.BackColor = Color.Aquamarine;
+            l3.ForeColor = Color.Black;
+            this.Controls.Add(l3);
+
+            b42.Text = "Replay";
+            b42.ForeColor = Color.White;
+            b42.BackColor = Color.Red;
+            b42.Enabled = true;
+            b42.Visible = true;
+            b42.Size = new Size(400, 100);
+            b42.Location = new Point(470, 400);
+            b42.Font = new Font("Arial", 14, FontStyle.Bold);
+            this.Controls.Add(b42);
+            b42.Click += new EventHandler(bu7_click);
+        }
+        void bu7_click(object sender, EventArgs e)
+        {
+            Form f2 = new Form2();
+            f2.Show();
+        }
+    }
+}
+
+*/
