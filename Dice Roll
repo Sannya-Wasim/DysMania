@@ -1,0 +1,201 @@
+// Dice class using c#
+/*using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Drawing;
+using System.Media;
+using System.Reflection;
+
+namespace Trial1
+
+{
+    public class Dice
+    {
+        // stores numbe of rolls of each number
+        long[] rolls = { 0, 0, 0, 0, 0, 0 };
+        // use random class for rolling
+        readonly Random r = new Random();
+        // store the last rolled number
+        int lastRoll = 0;
+        //store previously rolled number
+        int preRoll = 0;
+
+        public int RollNumber()
+        {
+            //saves previous number
+            preRoll = lastRoll;
+            // rolls the dice
+            lastRoll = r.Next(0, 6) + 1;
+            // update all rolls
+            rolls[lastRoll - 1]++;
+            return lastRoll;
+        }
+
+        //get last rolled number
+        public int LastRoll => lastRoll;
+        // get previous rolled valued
+        public int PreRoll => preRoll;
+        // totals of each number rolled
+        public long[] Rolls => rolls;
+        // totals of all rolls performed 
+        public long TotalRolls => rolls.Sum();
+        //Storing the count of each number rolled allows the totals for each number can be calculated using Linq:
+        //Total value of all rolled numbers
+        public long[] TotalofRolledNumbers => rolls.Select((number, index) => number * (index + 1)).ToArray();
+        /*Where Select stores the rolls array value in number and its index in index for each rolls entry, 
+         * and for each entry performs the calculation number * (index + 1). This calculation produces the
+         * total value of that number's rolls (e.g. if 2 is rolled twice, stored in roll[1], then the calculation
+         * is 2 * (1 + 1), which is 4, i.e. 2 rolled twice. The ToArray is needed because Select returns an IEnumerable.*/
+
+        // total of all values rolled
+        public long TotalValues => TotalofRolledNumbers.Sum();
+
+    }
+
+
+
+
+}*/
+
+// Dice Roll form
+/*using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Media;
+using System.Reflection;
+
+namespace Trial1
+
+{
+    public partial class FrmDiceRoll : Form
+    {
+        // Dice Faces
+        Bitmap[] faces = new Bitmap[7];     //includes an image for rolling
+        SoundPlayer play = new SoundPlayer();   // for the dice roll sound
+        // supports two dice
+        Dice dice1 = new Dice();
+        Dice dice2 = new Dice();
+        // count doubles when two dice are selected and rolled
+        static long doubles = 0;
+
+        public FrmDiceRoll()
+        {
+            InitializeComponent();
+            //loads images for the dice
+            Assembly prog = Assembly.GetExecutingAssembly();
+            faces[0] = new Bitmap(prog.GetManifestResourceStream("Trial1.dice3d160.png"));
+            faces[1] = new Bitmap(prog.GetManifestResourceStream("Trial1.one.png"));
+            faces[2] = new Bitmap(prog.GetManifestResourceStream("Trial1.two.png"));
+            faces[3] = new Bitmap(prog.GetManifestResourceStream("Trial1.three.png"));
+            faces[4] = new Bitmap(prog.GetManifestResourceStream("Trial1.four.png"));
+            faces[5] = new Bitmap(prog.GetManifestResourceStream("Trial1.five.png"));
+            faces[6] = new Bitmap(prog.GetManifestResourceStream("Trial1.six.png"));
+            //load sound file
+            play.Stream = prog.GetManifestResourceStream("Trial1.shake_dice.wav");
+        }
+
+        private void FrmDiceRoll_Load(object sender, EventArgs e)
+        {
+            groupBox2.Visible = false;
+            // put an image in the picture box to start
+            PBDice1.Image = faces[0];
+            PBDice2.Image = faces[0];
+        }
+
+        
+        private async Task<int> Roll()
+        {
+            // brief Pause
+            await Task.Delay(500);
+            // Roll Dice
+            return dice1.RollNumber();
+        }
+        // roll the dice
+        private async void ButRoll_Click_1(object sender, EventArgs e)
+        {
+            // only one roll at a time
+            ButRoll.Enabled = false;
+            PBDice1.Enabled = false;
+            PBDice2.Enabled = false;
+            //clear previous roll
+            PBDice1.Image = faces[0];
+            //
+            if (checkBox1.Checked)
+            {
+                //roll dice 2 as well
+                PBDice2.Image = faces[0];
+            }
+            // dice sound
+            play.Play();
+            // roll the dice and update display
+            PBDice1.Image = faces[await Roll()];
+            if (checkBox1.Checked)
+            {
+                //Roll dice two as well
+                PBDice2.Image = faces[dice2.RollNumber()];
+            }
+            UpdateStats();
+            // Can roll again
+            PBDice2.Enabled = true;
+            PBDice1.Enabled = true;
+            ButRoll.Enabled = true;
+        }
+
+        // Update the various stats available
+        void UpdateStats()
+        {
+            // if one dice is rolled
+            Tab1_totRollsres.Text = dice1.TotalRolls.ToString();
+            Tab1_1res.Text = dice1.Rolls[0].ToString();
+            Tab1_2res.Text = dice1.Rolls[1].ToString();
+            Tab1_3res.Text = dice1.Rolls[2].ToString();
+            Tab1_4res.Text = dice1.Rolls[3].ToString();
+            Tab1_5res.Text = dice1.Rolls[4].ToString();
+            Tab1_6res.Text = dice1.Rolls[5].ToString();
+            Tab1_Sumres.Text = dice1.TotalValues.ToString();
+            Tab1_prevres.Text = dice1.PreRoll.ToString();
+
+            // see if two dice are being rolled
+            if (checkBox1.Checked)
+            {
+                //Update dice two stats
+                Tab2_totres.Text = dice2.TotalRolls.ToString();
+                Tab2_1res.Text = dice1.Rolls[0].ToString();
+                Tab2_2res.Text = dice1.Rolls[1].ToString();
+                Tab2_3res.Text = dice1.Rolls[2].ToString();
+                Tab2_4res.Text = dice1.Rolls[3].ToString();
+                Tab2_5res.Text = dice1.Rolls[4].ToString();
+                Tab2_6res.Text = dice1.Rolls[5].ToString();
+                Tab2_Sumres.Text = dice1.TotalValues.ToString();
+                Tab2_prevres.Text = dice1.PreRoll.ToString();
+
+                if (dice1.LastRoll == dice2.LastRoll)
+                {
+                    Tab2_doubres.Text = (++doubles).ToString();
+                }
+            }
+        }
+
+        // show second dice?
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            //groupBox2.Visible = false;
+            if (checkBox1.Checked)
+            {
+                groupBox2.Visible = true;
+            }
+            else
+            {
+                groupBox2.Visible = false;
+            }
+        }
+    }
+}*/
