@@ -1,0 +1,467 @@
+/*
+MAIN FORM
+using System;
+using System.Media;
+using System.Windows.Forms;
+
+namespace ANIMAL_SOUNDS_GAMES
+{
+    public partial class Main : Form
+    {
+        private SoundPlayer bgMusic = new SoundPlayer(Properties.Resources.oldMcdonadls);
+        private SoundPlayer birds1 = new SoundPlayer(Properties.Resources.birds1);
+
+        public Main()
+        {
+            InitializeComponent();
+            this.BackgroundImage = Properties.Resources.bg;
+            this.WindowState = FormWindowState.Maximized;
+            textBox1.Text = "Learning game that matches ANIMAL SOUNDS and can be used by kids" +
+                " with DOWN’S SYNDROM, and SPEECH AND LANGUAGE DELAY as a fun way to learn and" +
+                " imitate sounds, to help in speech problems, as well as quiz themselves on learning
+                  quickness.";
+            bgMusic.Play();
+        }
+        private void seaAnimals_Click(object sender, EventArgs e)
+        {
+            Sea f10 = new Sea();
+            f10.Show();
+            this.Hide();
+        }
+        private void birds_Click(object sender, EventArgs e)
+        {
+            Birds f2 = new Birds();
+            birds1.Play();
+            f2.Show();
+            this.Hide();
+        }
+        private void farmAnimals_Click(object sender, EventArgs e)
+        {
+            Farm f4 = new Farm();
+            f4.Show();
+            this.Hide();
+        }
+        private void herbivors_Click(object sender, EventArgs e)
+        {
+            Herbv f8 = new Herbv();
+            f8.Show();
+            this.Hide();
+        }
+        private void carnivores_Click(object sender, EventArgs e)
+        {
+            Carnv f6 = new Carnv();
+            f6.Show();
+            this.Hide();
+        }
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+    }
+}
+BIRDS SOUNDS FORM
+using System;
+using System.Drawing;
+using System.Media;
+using System.Windows.Forms;
+
+namespace ANIMAL_SOUNDS_GAMES
+{
+    public partial class Birds : Form
+    {
+        public Birds()
+        {
+            InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+            this.BackgroundImage = Properties.Resources.birdsBg;
+        }
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, pictureBox1.ClientRectangle, Color.Black,
+ 	     ButtonBorderStyle.Solid);
+        }
+        private void owlButton_Click(object sender, EventArgs e)
+        {
+            SoundPlayer owlHoot = new SoundPlayer(Properties.Resources.Owl1);
+            owlHoot.Play();
+        }
+        private void crowButton_Click(object sender, EventArgs e)
+        {
+            SoundPlayer crowCaw = new SoundPlayer(Properties.Resources.Crow_caw);
+            crowCaw.Play();
+        }
+        private void sparrowButton_Click(object sender, EventArgs e)
+        {
+            SoundPlayer sparrowChirp = new SoundPlayer(Properties.Resources.Sparrow_chirp);
+            sparrowChirp.Play();
+        }
+        private void eagleButton_Click(object sender, EventArgs e)
+        {
+            SoundPlayer eagleSquak = new SoundPlayer(Properties.Resources.Eagle_sqwak);
+            eagleSquak.Play();
+        }
+        private void Birds_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Birds2 f3 = new Birds2();
+            f3.Show();
+            this.Hide();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Main f1 = new Main();
+            f1.Show();
+            this.Hide();
+        }
+    }
+}
+BIRDS ACTIVITY
+using System;
+using System.Drawing;
+using System.Media;
+using System.Windows.Forms;
+
+namespace ANIMAL_SOUNDS_GAMES
+{
+    public partial class Birds2 : Form
+    {
+        bool gameOver = false;
+        Timer clickTimer = new Timer();
+        int time = 20;
+        int score = 0;
+        Timer timer = new Timer { Interval = 1000 };
+        private SoundPlayer wrong = new SoundPlayer(Properties.Resources.Animal_wrong);
+        private SoundPlayer correct = new SoundPlayer(Properties.Resources.Animal_correct);
+
+        public Birds2()
+        {
+            InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+            startGameTimer();
+        }
+        private void startGameTimer()
+        {
+            timer.Start();
+            timer.Tick += delegate
+            {
+                time--;
+                if (time < 0)
+                {
+                    timer.Stop();
+                    MessageBox.Show("TIME IS OVER!!! PLEASE TRY AGAIN");
+                }
+                var ssTime = TimeSpan.FromSeconds(time);
+                label1.Text = "00: " + time.ToString();
+            };
+        }
+        private void pictureBox2_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, pictureBox1.ClientRectangle, Color.Black, ButtonBorderStyle.Solid);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Red;
+            correct.Play();
+            button2.Enabled = false;
+            score += 1;
+            label2.Text = "Score =" + score.ToString();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.Red;
+            wrong.Play();
+            button1.Enabled = false;
+            label2.Text = "Score =" + score.ToString();
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            button4.BackColor = Color.Red;
+            wrong.Play();
+            button3.Enabled = false;
+            label2.Text = "Score =" + score.ToString();
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            button3.BackColor = Color.Red;
+            correct.Play();
+            button4.Enabled = false;
+            score += 1;
+            label2.Text = "Score =" + score.ToString();
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            button5.BackColor = Color.Red;
+            wrong.Play();
+            button6.Enabled = false;
+            label2.Text = "Score =" + score.ToString();
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            button6.BackColor = Color.Red;
+            correct.Play();
+            button5.Enabled = false;
+            score += 1;
+            label2.Text = "Score =" + score.ToString();
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            button7.BackColor = Color.Red;
+            wrong.Play();
+            button8.Enabled = false;
+            gameOver = true;
+            label2.Text = "Score =" + score.ToString();
+        }
+        private void button8_Click(object sender, EventArgs e)
+        {
+            button8.BackColor = Color.Red;
+            correct.Play();
+            button7.Enabled = false;
+            score += 1;
+            gameOver = true;
+            label2.Text = "Score =" + score.ToString();
+        }
+        private void checkAnswer()
+        {
+            if (score == 4)
+            {
+                MessageBox.Show("YAYYY YOU HAVE WONN !!!!");
+            }
+            else
+            {
+                MessageBox.Show(" Sorry You've Lost :(( ");
+            }
+        }
+        private void checkGameOver()
+        {
+            Main f1 = new Main();
+            if ((button7.Enabled = false) || (button8.Enabled = true))
+            {
+                checkAnswer();
+                timer.Stop();
+            }
+            timer.Stop();
+            f1.Show();
+            this.Hide();
+        }
+        private void Birds2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            checkGameOver();
+        }
+    }
+}
+FARM ANIMALS SOUNDS FORM
+using System;
+using System.Drawing;
+using System.Media;
+using System.Windows.Forms;
+
+namespace ANIMAL_SOUNDS_GAMES
+{
+    public partial class Farm : Form
+    {
+        public Farm()
+        {
+            InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, pictureBox1.ClientRectangle, Color.Black,
+ButtonBorderStyle.Solid);
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Farm2 f5 = new Farm2();
+            f5.Show();
+            this.Hide();
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Main f1 = new Main();
+            f1.Show();
+            this.Hide();
+        }
+        private void catButton_Click(object sender, EventArgs e)
+        {
+            SoundPlayer catMeow = new SoundPlayer(Properties.Resources.cat_meow);
+            catMeow.Play();
+        }
+        private void dogButton_Click(object sender, EventArgs e)
+        {
+            SoundPlayer dogWoof = new SoundPlayer(Properties.Resources.dog_woof);
+            dogWoof.Play();
+        }
+        private void duckButton_Click(object sender, EventArgs e)
+        {
+            SoundPlayer duckQuack = new SoundPlayer(Properties.Resources.duck_quack);
+            duckQuack.Play();
+        }
+        private void cowButton_Click(object sender, EventArgs e)
+        {
+            SoundPlayer cowMoo = new SoundPlayer(Properties.Resources.cow_moo);
+            cowMoo.Play();
+        }
+        private void roosterButton_Click(object sender, EventArgs e)
+        {
+            SoundPlayer roosterCrow = new SoundPlayer(Properties.Resources.rooster_crow);
+            roosterCrow.Play();
+        }
+        private void sheepButton_Click(object sender, EventArgs e)
+        {
+            SoundPlayer sheepBaa = new SoundPlayer(Properties.Resources.Sheep_baa);
+            sheepBaa.Play();
+        }
+        private void Farm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+    }
+}
+FARM ANIMALS ACTIVITY
+using System;
+using System.Drawing;
+using System.Media;
+using System.Windows.Forms;
+
+namespace ANIMAL_SOUNDS_GAMES
+{
+    public partial class Farm2 : Form
+    {
+        bool gameOver = false;
+        Timer clickTimer = new Timer();
+        int time = 20;
+        int score = 0;
+        Timer timer = new Timer { Interval = 1000 };
+        private SoundPlayer wrong = new SoundPlayer(Properties.Resources.Animal_wrong);
+        private SoundPlayer correct = new SoundPlayer(Properties.Resources.Animal_correct);
+
+        public Farm2()
+        {
+            InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+            startGameTimer();
+        }
+        private void startGameTimer()
+        {
+            timer.Start();
+            timer.Tick += delegate
+            {
+                time--;
+                if (time < 0)
+                {
+                    timer.Stop();
+                    MessageBox.Show("TIME IS OVER!!! PLEASE TRY AGAIN");
+                }
+                var ssTime = TimeSpan.FromSeconds(time);
+                label1.Text = "00: " + time.ToString();
+            };
+        }
+        private void pictureBox3_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, pictureBox1.ClientRectangle, Color.Black,
+     ButtonBorderStyle.Solid);
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Red;
+            correct.Play();
+            button2.Enabled = false;
+            score += 1;
+            label2.Text = "Score =" + score.ToString();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.Red;
+            wrong.Play();
+            button1.Enabled = false;
+            label2.Text = "Score =" + score.ToString();
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            button4.BackColor = Color.Red;
+            correct.Play();
+            button3.Enabled = false;
+            score += 1;
+            label2.Text = "Score =" + score.ToString();
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            button3.BackColor = Color.Red;
+            wrong.Play();
+            button4.Enabled = false;
+            label2.Text = "Score =" + score.ToString();
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            button5.BackColor = Color.Red;
+            wrong.Play();
+            button6.Enabled = false;
+            label2.Text = "Score =" + score.ToString();
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            button6.BackColor = Color.Red;
+            correct.Play();
+            button5.Enabled = false;
+            score += 1;
+            label2.Text = "Score =" + score.ToString();
+        }
+        private void button8_Click(object sender, EventArgs e)
+        {
+            button8.BackColor = Color.Red;
+            wrong.Play();
+            button7.Enabled = false;
+            gameOver = true;
+            label2.Text = "Score =" + score.ToString();
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            button7.BackColor = Color.Red;
+            correct.Play();
+            button8.Enabled = false;
+            score += 1;
+            gameOver = true;
+            label2.Text = "Score =" + score.ToString();
+        }
+        private void checkAnswer()
+        {
+            if (score == 4)
+            {
+                MessageBox.Show("YAYYY YOU HAVE WONN !!!!");
+            }
+            else
+            {
+                MessageBox.Show(" Sorry You've Lost :(( ");
+            }
+        }
+        private void checkGameOver()
+        {
+            Main f1 = new Main();
+            if ((button7.Enabled = false) || (button8.Enabled = true))
+            {
+                checkAnswer();
+                timer.Stop();
+            }
+            timer.Stop();
+            f1.Show();
+            this.Hide();
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            checkGameOver();
+        }
+        private void Farm2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+*/
