@@ -1,0 +1,68 @@
+/*using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ANIMAL_SOUNDS_GAMES;
+using System.Media;
+using System.Windows.Forms;
+
+namespace MainMenu
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+            SoundPlayer main = new SoundPlayer(Properties.Resources.Fluffing_a_Duck);
+            main.Play();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PictureFlip.Main pb1 = new PictureFlip.Main();
+            DialogResult selectButton = pb1.ShowDialog();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ANIMAL_SOUNDS_GAMES.Main as1 = new ANIMAL_SOUNDS_GAMES.Main();
+            DialogResult selectButton = as1.ShowDialog();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Fruit_Match.col_match_face fm1 = new Fruit_Match.col_match_face();
+            DialogResult selectButton = fm1.ShowDialog();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DiceRoll.FrmDiceRoll dr1 = new DiceRoll.FrmDiceRoll();
+            DialogResult selectButton = dr1.ShowDialog();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            shapecolormatch.Form1 sc1 = new shapecolormatch.Form1();
+            DialogResult selectButton = sc1.ShowDialog();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            spellingJumble.Form1 sj1 = new spellingJumble.Form1();
+            DialogResult selectButton = sj1.ShowDialog();
+            this.Hide();
+        }
+    }
+}
+*/
