@@ -1,0 +1,204 @@
+// Fruit Match
+/*using System.Windows.Forms;
+using System.Media;
+namespace oop__project
+{
+    public partial class fruit_match : Form
+    {
+        public fruit_match()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\correct.wav");
+            audio.Play();
+            MessageBox.Show("WELL DONE!! YOU GOT IT RIGHT!!");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\wrong.wav");
+            audio.Play();
+            MessageBox.Show("OOPS!! THE CORRECT IS 'APPLE'!!");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\wrong.wav");
+            audio.Play();
+            MessageBox.Show("OOPS!! THE CORRECT IS 'BANANA'!!");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\correct.wav");
+            audio.Play();
+            MessageBox.Show("WELL DONE!! YOU GOT IT RIGHT!!");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\correct.wav");
+            audio.Play();
+            MessageBox.Show("WELL DONE!! YOU GOT IT RIGHT!!");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\wrong.wav");
+            audio.Play();
+            MessageBox.Show("OOPS!! THE CORRECT IS 'COCONUT'!!");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\correct.wav");
+            audio.Play();
+            MessageBox.Show("WELL DONE!! YOU GOT IT RIGHT!!");
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\wrong.wav");
+            audio.Play();
+            MessageBox.Show("OOPS!! THE CORRECT IS 'GRAPES'!!");
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\wrong.wav");
+            audio.Play();
+            MessageBox.Show("OOPS!! THE CORRECT IS 'MANGO'!!");
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\correct.wav");
+            audio.Play();
+            MessageBox.Show("WELL DONE!! YOU GOT IT RIGHT!!");
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\correct.wav");
+            audio.Play();
+            MessageBox.Show("WELL DONE!! YOU GOT IT RIGHT!!");
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\wrong.wav");
+            audio.Play();
+            MessageBox.Show("OOPS!! THE CORRECT IS 'STRAWBERRY'!!");
+        }
+    }
+}*/
+
+// Shape Match
+/*using System.Windows.Forms;
+using System.Media;
+
+namespace oop__project
+{
+    public partial class shape_match : Form
+    {
+        public shape_match()
+        {
+            InitializeComponent();
+        }
+
+        //int score = 0;
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\correct.wav");
+            audio.Play();
+            MessageBox.Show("WELL DONE!! YOU GOT IT RIGHT!!");
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\correct.wav");
+            audio.Play();
+            MessageBox.Show("WELL DONE!! YOU GOT IT RIGHT!!");
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\wrong.wav");
+            audio.Play();
+            MessageBox.Show("OOPS!! THE CORRECT IS 'HEART'!!");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\wrong.wav");
+            audio.Play();
+            MessageBox.Show("OOPS!! THE CORRECT IS 'CIRCLE'!!");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\correct.wav");
+            audio.Play();
+            MessageBox.Show("WELL DONE!! YOU GOT IT RIGHT!!");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\wrong.wav");
+            audio.Play();
+            MessageBox.Show("OOPS!! THE CORRECT IS 'TRIANGLE'!!");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\correct.wav");
+            audio.Play();
+            MessageBox.Show("WELL DONE!! YOU GOT IT RIGHT!!");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\wrong.wav");
+            audio.Play();
+            MessageBox.Show("OOPS!! THE CORRECT IS 'SQUARE'!!");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\correct.wav");
+            audio.Play();
+            MessageBox.Show("WELL DONE!! YOU GOT IT RIGHT!!");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\wrong.wav");
+            audio.Play();
+            MessageBox.Show("OOPS!! THE CORRECT IS 'STAR'!!");
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\correct.wav");
+            audio.Play();
+            MessageBox.Show("WELL DONE!! YOU GOT IT RIGHT!!");
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            SoundPlayer audio = new SoundPlayer(@"C:\Users\Wasim Yasin\Downloads\wrong.wav");
+            audio.Play();
+            MessageBox.Show("OOPS!! THE CORRECT IS 'MOON'!!");
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}*/
